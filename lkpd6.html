@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Search</title>
+</head>
+<body>
+    <div style="text-align: center;">
+        <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
+        <button onclick="search()">Submit</button>
+        <p id="result">Tidak mencari data...</p>
+    </div>
+
+    <script>
+
+        function search() {
+            const input = document.getElementById("searchInput").value.trim();
+            const result = document.getElementById("result");
+
+            result.textContent = input ?    `Mencari data ${input}...   ` : "Tidak mencari data...";
+        }
+    </script>
+</body>
+</html>

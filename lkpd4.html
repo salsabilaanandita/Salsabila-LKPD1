@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubah Gambar dan Opacity</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            /* justify-content: center; */
+            gap: 20px;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            transition: opacity 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <img id="originalImage" src="img/travel.jpg" alt="Gambar Awal">
+
+        <img id="outputImage" src="img/travel.jpg" alt="Gambar Output" style="opacity: 1;">
+    </div>
+
+    <form onsubmit="return updateImage()" style="margin-top: 50px;">
+        <label for="imageSelect">Ubah:</label>
+        <select id="imageSelect">
+            <option value="img/travel.jpg">Gambar 1</option>
+            <option value="img/travel2.jpg">Gambar 2</option>
+            <option value="img/travel3.jpg">Gambar 3</option>
+        </select>
+
+        <label for="opacitySelect">Opacity:</label>
+        <select id="opacitySelect">
+            <option value="1">1</option>
+            <option value="0.5">0.5</option>
+            <option value="0.2">0.2</option>
+        </select>
+
+        <button type="submit">Kirim</button>
+    </form>
+
+    <script>
+        function updateImage() {
+            const imageSelect = document.getElementById("imageSelect").value;
+            const opacitySelect = document.getElementById("opacitySelect").value;
+            const outputImage = document.getElementById("outputImage");
+
+            console.log("Selected Image Path: ", imageSelect);
+            console.log("Selected Opacity: ", opacitySelect);
+
+            outputImage.src = imageSelect;
+            outputImage.style.opacity = opacitySelect;
+
+            return false; 
+        }
+    </script>
+</body>
+
+</html>

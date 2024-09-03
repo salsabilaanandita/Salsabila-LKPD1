@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            /* background-image: url(/img/travel.jpg);
+            /* height: 50px; */
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.357);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            /* Pusatkan seluruh konten di header */
+            align-items: center;
+        }
+
+        .logo {
+            margin-right: 20px;
+            /* Spasi antara logo dan navbar */
+        }
+
+        .logo h1 {
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            color: #333;
+            margin: 0;
+            font-size: 24px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #007BFF;
+            border-bottom: 2px solid #007BFF;
+            /* Hover effect */
+        }
+
+        .home {
+            background-image: url(img/travel.jpg);
+            /* Ganti dengan URL gambar */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            flex-direction: column;
+            /* height: 100px; */
+        }
+
+        .home-title {
+            font-size: 60px;
+            font-family: 'Georgia', serif;
+            margin: 0;
+        }
+
+        .home-description {
+            font-size: 20px;
+            font-family: 'Arial', sans-serif;
+            margin: 20px 0;
+            max-width: 600px;
+            line-height: 1.5;
+        }
+
+        .cta-button {
+            margin-top: 20px;
+            padding: 10px 30px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+        .menu {
+            padding: 50px 0;
+        }
+
+        .photo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .photo .image-1,
+        .photo .image-2,
+        .photo .image-3,
+        .photo .image-4,
+        .photo .image-5 {
+            padding: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 200px;
+            transition: transform 0.2s;
+        }
+
+        .photo .image-1:hover,
+        .photo .image-2:hover,
+        .photo .image-3:hover,
+        .photo .image-4:hover,
+        .photo .image-5:hover {
+            transform: scale(1.05);
+        }
+
+        .photo img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .photo h1 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .photo p {
+            font-size: 0.9rem;
+            color: #555;
+            margin: 5px 0;
+        }
+
+        .photo .info {
+            font-size: 0.8rem;
+            color: #888;
+            margin: 5px 0;
+        }
+
+        .photo .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #008CBA;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .photo .read-more:hover {
+            background-color: #005f73;
+        }
+
+
+        .destination-description {
+            padding: 50px 20px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .description-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .destination-description h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .description-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            /* Tambahkan agar responsive */
+        }
+
+        .description-img {
+            max-width: 300px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 8px;
+        }
+
+        .description-text {
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .description-item h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .description-item p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .contact {
+            padding: 30px 20px;
+            background-color: #f1f1f1;
+            text-align: center;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .contact p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .contact-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+    <header>
+        <div class="logo">
+            <h1>Logo</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Menu</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section class="home" id="home">
+        <h1 class="home-title">Explore the Beauty of Nature</h1> <!-- Judul yang menarik -->
+        <p class="home-description">Discover the most breathtaking landscapes, tranquil lakes, and majestic mountains.
+            This is the perfect destination for nature lovers and adventure seekers alike.</p>
+        <a href="#about" class="cta-button">Explore More</a>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu">
+        <div class="judul">
+            <h1 style="text-align: center;">Places</h1>
+            <div class="photo">
+                <div class="image-1">
+                    <img src="img/travel.jpg" alt="Jogja">
+                    <h1>Jogja</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="info">Viewers: 1,234 | Comments: 56</div>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+                <div class="image-2">
+                    <img src="img/travel.jpg" alt="Bali">
+                    <h1>Bali</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="info">Viewers: 2,345 | Comments: 78</div>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+                <div class="image-3">
+                    <img src="img/travel.jpg" alt="Lombok">
+                    <h1>Lombok</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="info">Viewers: 1,789 | Comments: 64</div>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+                <!-- <div class="image-4">
+                    <img src="img/travel.jpg" alt="Raja Ampat">
+                    <h1>Raja Ampat</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="info">Viewers: 1,567 | Comments: 34</div>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+                <div class="image-5">
+                    <img src="img/travel.jpg" alt="Komodo">
+                    <h1>Komodo</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="info">Viewers: 2,890 | Comments: 92</div>
+                    <a href="#" class="read-more">Read More</a>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Description Section -->
+    <section class="destination-description">
+        <div class="description-container">
+            <h2>Yuk, Intip 3 Tempat Keren Ini!</h2>
+            <div class="description-item">
+                <img src="img/travel.jpg" alt="Jogja" class="description-img">
+                <div class="description-text">
+                    <h3>Jogja</h3>
+                    <p>Jogja itu kota yang asik banget, bro! Banyak banget tempat kece kayak Candi Borobudur sama
+                        Prambanan. Selain itu, ada juga suasana tradisional yang bikin betah. Kalo lo suka budaya dan
+                        kuliner, Jogja tempatnya!</p>
+                </div>
+            </div>
+            <div class="description-item">
+                <img src="img/travel.jpg" alt="Bali" class="description-img">
+                <div class="description-text">
+                    <h3>Bali</h3>
+                    <p>Bali? Jangan ditanya deh, ini surga dunia! Dari pantai-pantai yang cakep, sawah hijau, sampe
+                        suasana malam di Kuta. Kalo mau relax atau party, Bali punya semuanya. Lo bisa nikmatin sunset
+                        di Seminyak atau explore pasar di Ubud!</p>
+                </div>
+            </div>
+            <div class="description-item">
+                <img src="img/travel.jpg" alt="Lombok" class="description-img">
+                <div class="description-text">
+                    <h3>Lombok</h3>
+                    <p>Lombok ini cocok banget buat yang suka petualangan. Mulai dari surfing di pantai yang masih sepi,
+                        sampe hiking ke puncak Gunung Rinjani. Selain itu, ada juga air terjun yang bikin lo baper.
+                        Pengen jauh dari keramaian? Lombok jawabannya!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <h2>Contact Us</h2>
+            <p>If you have any questions, feel free to reach out!</p>
+            <a href="mailto:example@example.com" class="contact-button">Email Us</a>
+        </div>
+    </section>
+
+
+</body>
+
+</html>

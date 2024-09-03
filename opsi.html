@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Jawaban dan Poin</title>
+</head>
+
+<body>
+    <h2>Opsi Jawaban & Poin</h2>
+    <div id="options">
+        <div class="option">
+            <label for="Tambah" name="opsi" id="tambahOpsi">Opsi 1</label>
+            <input type="text" placeholder="poin">
+            <input type="text" placeholder="deskripsi opsi">
+        </div>
+    </div>
+    <label onclick="tambahOpsi(this)">+ tambah opsi</label>
+
+    <script>
+
+        let tambahBaru = 1;
+        function tambahOpsi() {
+            tambahBaru++;
+            let Tambah = document.getElementById('options');
+            let opsiBaru = document.createElement('div');
+            opsiBaru.className = 'option';
+            opsiBaru.innerHTML = `
+            <label for="Tambah" name="opsi" id="tambahOpsi">Opsi ${tambahBaru}</label>
+            <input type="text" placeholder="poin">
+            <input type="text" placeholder="deskripsi opsi">
+            `;
+            // Tambah.innerHTML;/
+            Tambah.appendChild(opsiBaru);
+        }
+    </script>
+</body>
+
+</html>
